@@ -91,3 +91,51 @@ Install [Elm Plugin for Visual Studio Code](https://marketplace.visualstudio.com
     "editor.formatOnSave": true
 },
 ```
+
+## Run Unit Test with elm-test
+
+Execute the following command to install `elm-test`.
+
+```
+$ npm install -g elm-test
+```
+
+Execute the following command to install the packages needed for testing in Elm.
+
+```
+$ elm install elm-explorations/test
+```
+
+We will create the following function as a subject for testing.
+
+```elm
+add : Int -> Int -> Int
+add x y =
+    x + y
+```
+
+To test the above function, create test code with the following content in the tests/Test.elm.
+
+```elm
+module Tests exposing (..)
+
+import Expect
+import Main exposing (add)
+import Test exposing (..)
+
+
+all : Test
+all =
+    describe "add function"
+        [ test "adds two numbers" <|
+            \_ ->
+                add 1 2
+                    |> Expect.equal 3
+        ]
+```
+
+Execute the following command to run all tests.
+
+```
+$ elm-test
+```
