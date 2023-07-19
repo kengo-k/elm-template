@@ -59,3 +59,19 @@ Create an index.html file with the following content to embed the compiled main.
 </body>
 </html>
 ```
+
+### Start Dev Server with elm-live
+
+We will use `elm-live` to launch the development server and run HelloWorld. elm-live allows for more efficient development as it possesses a hot-reloading feature that the standard `elm-reactor` does not have. Install elm-live with the following command. 
+
+```
+$ npm install --global elm elm-live
+```
+
+After installation, execute the following command to launch the development server.
+
+```
+$ elm-live src/Main.elm --start-page=custom.html -- --output=main.js
+```
+
+Please confirm that the server is running at localhost:8000 and that "HelloWorld" is being displayed.
