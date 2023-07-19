@@ -62,7 +62,7 @@ Create an index.html file with the following content to embed the compiled main.
 
 ### Start Dev Server with elm-live
 
-We will use `elm-live` to launch the development server and run HelloWorld. elm-live allows for more efficient development as it possesses a hot-reloading feature that the standard `elm-reactor` does not have. Install elm-live with the following command. 
+We will use `elm-live` to launch the development server and run HelloWorld. elm-live allows for more efficient development as it possesses a hot-reloading feature that the standard `elm-reactor` does not have. Install elm-live with the following command.
 
 ```
 $ npm install --global elm-live
@@ -75,3 +75,19 @@ $ elm-live src/Main.elm --start-page=index.html -- --output=main.js
 ```
 
 Please confirm that the server is running at localhost:8000 and that "HelloWorld" is being displayed.
+
+### Auto formatting with elm-format
+
+Set up to automatically format elm source file using elm-format in VSCode when saving. Execute the following command to install elm-format.
+
+```
+$ npm install -g elm-format
+```
+
+Install [Elm Plugin for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=Elmtooling.elm-ls-vscode) and add the following configuration to the VSCode settings file.
+
+```
+"[elm]": {
+    "editor.formatOnSave": true
+},
+```
